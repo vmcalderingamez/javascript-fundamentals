@@ -26,3 +26,6 @@ delete brandObject.brand;
 
 console.log(brand);
 console.log(brandObject);
+
+
+// do not use var anymore, its a bad practice !!!
