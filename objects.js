@@ -1,3 +1,4 @@
+//Object Destructuring
 
 const person = {
     firstname: "Jamila",
@@ -15,17 +16,19 @@ const person = {
     deleteMe: true
 };
 
-person["lastName"] = "Ahmed";
+//const firstName = person.firstname;
+// const age = person.age;
+// const balance = person.balance;
 
-delete person.deleteMe;
+const {
+    firstname,
+    firstname: name, //this is for renaming a propertie we access 
+    age,
+    balance,
+    address: {city} //this is the notation when access to an object
+} = person;
 
-console.log(person.toString()) 
-console.log(person); 
-
-for (const p in person) {
-    console.log(p);
-    console.log(person[p]);
-}
-
-console.log(Object.keys(person));
-console.log(Object.values(person));
+console.log(firstname);
+console.log(age);
+console.log(balance);
+console.log(city);
