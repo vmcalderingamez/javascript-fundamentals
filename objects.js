@@ -1,5 +1,5 @@
 
-var person = {
+const person = {
     firstname: "Jamila",
     age: 21,
     isFemale: true,
@@ -8,15 +8,24 @@ var person = {
     address: {
         city: "London",
         postCode: "SW9"
-    }
+    },
+    toString: function() {
+        return `Name: ${this.firstname} Age: ${this.age}`
+    },
+    deleteMe: true
 };
 
-console.log(person);
-console.log();
-console.log(person.firstname);
-console.log(person.age);
-console.log(person.balance);
-console.log(person.address.city);
-console.log(Object.values(person));
+person["lastName"] = "Ahmed";
+
+delete person.deleteMe;
+
+console.log(person.toString()) 
+console.log(person); 
+
+for (const p in person) {
+    console.log(p);
+    console.log(person[p]);
+}
+
 console.log(Object.keys(person));
-console.log(JSON.stringify(person));
+console.log(Object.values(person));
