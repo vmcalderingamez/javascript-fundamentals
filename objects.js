@@ -1,34 +1,33 @@
-//Object Destructuring
+//Spread Operator on Objects
 
-const person = {
+const jamila = {
     firstname: "Jamila",
     age: 21,
     isFemale: true,
     balance: 100.32,
-    dob: new Date(2000,0,30).toJSON(),
-    address: {
-        city: "London",
-        postCode: "SW9"
-    },
+    dob: new Date(2000,0,30).toJSON(),    
     toString: function() {
         return `Name: ${this.firstname} Age: ${this.age}`
     },
     deleteMe: true
 };
 
-//const firstName = person.firstname;
-// const age = person.age;
-// const balance = person.balance;
+const address = {
+    city: "London",
+    postCode: "SW9"
+};
 
-const {
-    firstname,
-    firstname: name, //this is for renaming a propertie we access 
-    age,
-    balance,
-    address: {city} //this is the notation when access to an object
-} = person;
+/* const person = {
+    firstname: jamila.firstname,
+    address: {
+        city: address.city,
+        postCode: address.postCode
+    }
+} */
 
-console.log(firstname);
-console.log(age);
-console.log(balance);
-console.log(city);
+const person = {
+    ...jamila,
+    address: {...address}
+}
+
+console.log(person);
